@@ -1,0 +1,81 @@
+{
+  "cookies": [
+    {
+      "name": "session-id",
+      "value": "147-8404332-7449306",
+      "domain": ".amazon.ca",
+      "path": "/",
+      "expires": 1761106239.839259,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "session-id-time",
+      "value": "2082787201l",
+      "domain": ".amazon.ca",
+      "path": "/",
+      "expires": 1761106239.839428,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "i18n-prefs",
+      "value": "CAD",
+      "domain": ".amazon.ca",
+      "path": "/",
+      "expires": 1761106239.839482,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "csm-hit",
+      "value": "tb:s-QEQ59AXB4022DZAZ2HT6|1729570239953&t:1729570239953",
+      "domain": "www.amazon.ca",
+      "path": "/",
+      "expires": 1759810239,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ubid-acbca",
+      "value": "131-5801622-4932133",
+      "domain": ".amazon.ca",
+      "path": "/",
+      "expires": 1761106240.337697,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.amazon.ca",
+      "localStorage": [
+        {
+          "name": "csm:adb",
+          "value": "adblk_no"
+        },
+        {
+          "name": "csm-hit",
+          "value": "tb:s-QEQ59AXB4022DZAZ2HT6|1729570239953&t:1729570241191&adb:adblk_no"
+        },
+        {
+          "name": "csa-ctoken-QEQ59AXB4022DZAZ2HT6",
+          "value": "1729573840834"
+        },
+        {
+          "name": "csa-tabbed-browsing",
+          "value": "{\"lastActive\":{\"visible\":true,\"pid\":\"iawbda-a5w1q0-3lvmlr-k99qgu\",\"tid\":\"iawbda-a5w1q0-3lvmlr-k99qgu\",\"ent\":{\"rid\":\"QEQ59AXB4022DZAZ2HT6\",\"ety\":\"Gateway\",\"esty\":\"desktop\"}},\"lastInteraction\":{},\"time\":1729570240836}"
+        },
+        {
+          "name": "csm-bf",
+          "value": "[\"QEQ59AXB4022DZAZ2HT6\"]"
+        }
+      ]
+    }
+  ]
+}
