@@ -12,14 +12,13 @@ test.describe('Amazon tests', () => {
   });
 
   test('search for a product', async ({ page }) => {
-    const asinCode = await page.locator("//tr/th[text()=' ASIN ']/following-sibling::td").textContent();
-    if (asinCode) {
-      await searchForProduct(page, asinCode)
-    } else {
-      console.log('ASIN code not found.');
-    }
-    await expect(page.locator('body')).toContainText(
-      'Keurig K-Express Single Serve K-Cup Pod Coffee Maker, Mint, With A Removable Reservoir And Strong Button Function'
+    const asinLocator = await page.locator("//tr/th[text()=' ASIN ']/following-sibling::td");
+    const asinNumber = await asinLocator.innerText();
+    const cleanedAsinNumber = asinNumber.trim(); 
+    await searchForProduct(page, cleanedAsinNumber);
+    
+    await expect(page.locator('s-search-results')).toContainText(
+      'Starbucks Single-Origin Colombia Coffee'
     );
   })
 
