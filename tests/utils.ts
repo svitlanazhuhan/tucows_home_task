@@ -8,3 +8,12 @@ export async function searchForProduct(page: Page, searchQuery: string) {
   // Submit your search ("Enter" or clicking the search button)
   await searchField.press('Enter');
 }
+
+export async function getSearchResultsNumber(page: Page) {
+  const resultsSummaryText = await page.innerText('.s-desktop-toolbar');
+  const resultsRegex = /([\d,]+) results/;
+  const matches = resultsSummaryText.match(resultsRegex);
+  const numberWithCommas = matches ? matches[1] : '0';
+  const totalResults = parseInt(numberWithCommas.replace(/,/g, ''), 10);
+  return totalResults;
+}

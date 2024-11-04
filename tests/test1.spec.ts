@@ -8,16 +8,16 @@ test.describe('Amazon tests', () => {
   })
 
   test('has title', async ({ page }) => {
-    await expect(page.getByTestId('title')).toContainText('Keurig K-Express Single Serve K-Cup Pod Coffee Maker');
+    await expect(page.getByTestId('title')).toContainText('Starbucks Single-Origin Colombia Coffee');
   });
 
   test('search for a product', async ({ page }) => {
-    const asinLocator = await page.locator("//tr/th[text()=' ASIN ']/following-sibling::td");
+    const asinLocator = page.locator('table').getByText(/B0\w+/);
     const asinNumber = await asinLocator.innerText();
-    const cleanedAsinNumber = asinNumber.trim(); 
+    const cleanedAsinNumber = asinNumber.trim();
     await searchForProduct(page, cleanedAsinNumber);
-    
-    await expect(page.locator('s-search-results')).toContainText(
+
+    await expect(page.locator('.s-search-results')).toContainText(
       'Starbucks Single-Origin Colombia Coffee'
     );
   })
@@ -27,7 +27,7 @@ test.describe('Amazon tests', () => {
     const cardItemsCount = await page.getByTestId('nav-cart-count-container').innerText();
     expect(cardItemsCount).not.toBeNull();
     expect(cardItemsCount.trim()).toBe('1');
-    await page.getByRole('link', { name: 'Go to cart' }).click()
+    await page.getByTestId('sw-gtc').click();
     const qtySelectValue = await page.locator('select[name="quantity"]').inputValue();
     expect(qtySelectValue.trim()).toBe('1');
     await page.getByRole('button', { name: ' Proceed to Checkout ' }).click()
